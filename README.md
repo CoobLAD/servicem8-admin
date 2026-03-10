@@ -67,6 +67,30 @@ Then point Claude Code at the skill directory, or copy the `SKILL.md`, `scripts/
 </details>
 
 <details>
+<summary><strong>OpenClaw</strong></summary>
+
+OpenClaw loads skills from `~/.agents/skills/`. You **must** clone directly into that path or it won't be detected:
+
+```bash
+mkdir -p ~/.agents/skills
+git clone https://github.com/CoobLAD/servicem8-admin.git ~/.agents/skills/servicem8-admin
+cd ~/.agents/skills/servicem8-admin
+python3 scripts/setup.py
+```
+
+Then set your API key in the shell OpenClaw runs under:
+
+```bash
+export SERVICEM8_API_KEY="your_key_here"
+# or (both work)
+export SERVICEM8_ACCESS_TOKEN="your_key_here"
+```
+
+OpenClaw should detect the skill automatically. You can verify by asking it *"what skills do you have?"*
+
+</details>
+
+<details>
 <summary><strong>Claude Desktop (MCP)</strong></summary>
 
 ServiceM8 has an official MCP server. Add it to your Claude Desktop config at `claude_desktop_config.json`:
